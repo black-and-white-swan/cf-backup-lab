@@ -39,3 +39,21 @@ resource "cloudflare_r2_bucket_lifecycle" "lab" {
     },
   ]
 }
+
+resource "cloudflare_r2_bucket_lock" "lab" {
+  account_id  = var.account_id
+  bucket_name = cloudflare_r2_bucket.lab.name
+
+  rules = [
+    {
+      # Sauvegardes immuables : ni suppression ni écrasement pendant 7 jours
+      id      = "immuable-7-jours"
+      enabled = true
+      prefix  = ""
+      condition = {
+        type            = "Age"
+        max_age_seconds = 7 * 24 * 3600 # 7 jours, en secondes
+      }
+    },
+  ]
+}
