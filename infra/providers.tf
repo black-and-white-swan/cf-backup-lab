@@ -13,6 +13,8 @@ terraform {
     key    = "infra/terraform.tfstate"
     region = "auto"
 
+    use_lockfile = true
+
     # R2 parle S3 mais n'est pas AWS : on coupe les vérifications propres à AWS
     skip_credentials_validation = true
     skip_metadata_api_check     = true
