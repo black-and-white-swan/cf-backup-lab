@@ -1,4 +1,4 @@
-# Bucket de labo pour les sauvegardes de test
+# Bucket de labo pour les sauvegardes de test (appliqué par la CI au merge)
 
 resource "cloudflare_r2_bucket" "lab" {
   account_id = var.account_id
