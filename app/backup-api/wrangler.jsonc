@@ -2,5 +2,11 @@
   "$schema": "node_modules/wrangler/config-schema.json",
   "name": "backup-api",
   "main": "src/index.ts",
-  "compatibility_date": "2026-11-01"
+  "compatibility_date": "2026-11-01",
+  "r2_buckets": [
+    {
+      "binding": "BACKUPS",
+      "bucket_name": "swan-lab-backups"
+    }
+  ]
 }
